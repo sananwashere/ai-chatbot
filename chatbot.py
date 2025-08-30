@@ -6,7 +6,7 @@ from openai import OpenAI
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-MAX_MESSAGES = 10  # Limit conversation context for efficiency
+MAX_MESSAGES = 10
 
 def chat():
     print("🤖 AI Chatbot (type 'quit' or 'exit' to stop)\n")

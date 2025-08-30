@@ -7,10 +7,10 @@ import streamlit as st
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-MAX_MESSAGES = 10  # Limit conversation history for efficiency
+MAX_MESSAGES = 10
 AI_PERSONALITY = "You are a friendly and helpful AI assistant, providing concise and accurate answers."
 
-# Initialize chat history
+
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "system", "content": AI_PERSONALITY}]
 
@@ -36,7 +36,7 @@ if st.button("Send") and user_input:
     except Exception as e:
         st.error(f"⚠️ API Error: {e}")
 
-# Display chat history with readable color scheme
+# Display chat history
 for msg in st.session_state.messages:
     if msg["role"] == "user":
         st.markdown(
